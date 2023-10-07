@@ -4,7 +4,7 @@
 
 This is an image that contains a magisk-patched boot image (made with Magisk 26.3). It is based off of the `khadas_pie_AOSP_20200711_arm64_to_BB2_Pro image`, which we've found to work for S912 AMLOGIC cpus, as are found in Tanix TX9S and some iHomelife boxes. Maybe only works with the DDR2 RAM based models?
 
-Also included here is a custom.sh script that you can (and should) have immediately after flashing the image.
+Also included here is a custom.sh script that you can (and should) use immediately after flashing the image. (see below.)
 
 It does the following things:
 
@@ -20,7 +20,7 @@ It does the following things:
 
 ## FLASHING THE IMAGE
 
-* Grab the image zip file from: https://www.dropbox.com/scl/fi/c7f338kk37b2y09jxzqlj/tx9s-a9-aarch64-magisk-cs3.zip?rlkey=hsz53rfmsi46yh9247iabe2fl&dl=1
+* Grab the image zip file from: [This place here](https://www.dropbox.com/scl/fi/c7f338kk37b2y09jxzqlj/tx9s-a9-aarch64-magisk-cs3.zip?rlkey=hsz53rfmsi46yh9247iabe2fl&dl=1)
 * Unzip it, and flash the image to your ATV using the amlogic burn tool.
 * Read the .md first, if you want.
 
@@ -62,7 +62,7 @@ Say what? Yes, that's right. Set up a nginx/webserver/whatever and serve the boo
 I won't provide instructions as this is for the more techy folks who probably already can figure this out.
 There's also quite a number of ways to do this. But here's the information you will need, and some hints:
 
-* The image will curl this address: http://atv-installer.local.lan/boot.tgz?mac=<mac-addr>&run_stage=x
+* The image will curl this address: `http://atv-installer.local.lan/boot.tgz?mac=<mac-addr>&run_stage=x`
 * It expects a successful HTTP response code and a file attachment. The file attachment can be named anything.
 * There's more info about this in the image's .md file. I suggest reading that.
 
