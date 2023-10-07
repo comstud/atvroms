@@ -7,7 +7,7 @@
 # Add your custom commands in here if you want. Some examples (include all of
 # these scripts on your USB drive or inside boot.tgz if you use them):
 
-./set-hostname.sh 'my-hostname'
-./set-timezone.sh 'Europe/London'
-./set-ntp-server.sh uk.pool.ntp.org
-#./install-atlas.sh
+sh ./set-hostname.sh 'my-hostname'
+sh ./set-timezone.sh 'Europe/London'
+sh ./set-ntp-server.sh uk.pool.ntp.org
+#sh ./install-atlas.sh
