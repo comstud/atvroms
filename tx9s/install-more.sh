@@ -7,6 +7,8 @@
 # Add your custom commands in here if you want. Some examples (include all of
 # these scripts on your USB drive or inside boot.tgz if you use them):
 
+cd `dirname $0`
+
 sh ./set-hostname.sh 'my-hostname'
 sh ./set-timezone.sh 'Europe/London'
 sh ./set-ntp-server.sh uk.pool.ntp.org
