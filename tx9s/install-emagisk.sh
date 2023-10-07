@@ -16,7 +16,7 @@
 reboot_after_install=1
 
 if [ -f eMagisk-9.4.4-adb-patched.zip ]; then
-    if [ ! -d /data/adb/emagisk ]; then
+    if [ ! -d /data/adb/modules/emagisk ]; then
         # Not installed yet.
         magisk --install-module eMagisk-9.4.4-adb-patched.zip
         if [ $reboot_after_install -ne 0 ]; then
