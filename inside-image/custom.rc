@@ -1,0 +1,4 @@
+# If re-packing firmware, this goes into level2/system/system/etc/init/.
+# (which will end up as /system/etc/init/custom.rc)
+on property:sys.boot_completed=1
+    exec_background u:r:init:s0 root root -- /system/etc/custom-install.sh
