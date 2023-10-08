@@ -20,7 +20,7 @@ It does the following things:
 
 ## FLASHING THE IMAGE
 
-* Grab the image zip file from: [This place here](https://www.dropbox.com/scl/fi/c7f338kk37b2y09jxzqlj/tx9s-a9-aarch64-magisk-cs3.zip?rlkey=hsz53rfmsi46yh9247iabe2fl&dl=1)
+* Grab the cs5 image zip file from: [This place here](https://www.dropbox.com/scl/fi/kwqdxhbisek3r68xv6vyp/tx9s-a9-aarch64-magisk-cs5.zip?rlkey=kqu6v122e8c1hxulwewtaql35&dl=1)
 * Unzip it, and flash the image to your ATV using the amlogic burn tool.
 * Read the .md first, if you want.
 
@@ -37,6 +37,7 @@ OPTIONAL:
 * Grab integritychecker.apk (from where you got this file or elsewhere.)
 * Make (or use/edit the one found where you got this file) a 'install-more.sh'
 * You may put whatever commands you want in there. It will run at the end of 'custom.sh' as root.
+* If running cs5 or newer, you can mkdir /sdcard/.custom-init.d and copy *.sh into there and they will run on boot.
 
 ## USING USB DRIVE METHOD #1
 

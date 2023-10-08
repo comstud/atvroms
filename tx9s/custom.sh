@@ -1,5 +1,5 @@
 #!/system/bin/sh
-# version 3.0
+# version v5
 
 # This sets up a tx9s atv. Put this file and the *.apk and *.zip in here
 # on a USB drive. Insert USB drive in the port furthest from the ethernet
@@ -36,7 +36,11 @@
 #
 # CHANGELOG:
 #
-# v3:- 
+# v5: 2023/10/08
+# - touch /sdcard/.no-custom-install when done. If running cs5 or newer image,
+#   this prevents it from trying to continue to install from net/usb.
+# v4: unreleased
+# v3:
 # - log file is now under /sdcard/.custom-install as install.log
 # - changed the check for install-atlas.sh to be install-more.sh. Install what
 #   you want.
@@ -219,6 +223,9 @@ fi
 
 log 'Booted.'
 
+# Clean up space.
+rm -f ../on-boot.tgz
+
 log 'Making sure we do not get pop-ups and junk...'
 do_settings
 
@@ -255,6 +262,9 @@ if [ -f install-more.sh ]; then
     /system/bin/sh install-more.sh
 fi
 
+# This tells the image to not try to contact net server or use usb drive
+# anymore if running cs5 image or newer.
+touch /sdcard/.no-custom-install
 log 'DONE!'
 
 exit 0

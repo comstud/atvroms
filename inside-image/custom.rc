@@ -1,4 +1,4 @@
-# If re-packing firmware, this goes into level2/system/system/etc/init/.
-# (which will end up as /system/etc/init/custom.rc)
+# Place in unpacked image at level2/system/system/etc/init/custom.rc with mode 0644.
+
 on property:sys.boot_completed=1
-    exec_background u:r:init:s0 root root -- /system/etc/custom-install.sh
+    exec_background u:r:init:s0 root root -- /system/etc/custom-on-boot.sh

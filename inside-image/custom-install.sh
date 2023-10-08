@@ -1,7 +1,6 @@
 #!/system/bin/sh
 
-# If repacking firmware, this goes into level2/system/system/etc/.
-# (which will become /system/etc)
+# Place in unpacked image at level2/system/system/etc/custom-install.sh with mode 0755.
 
 # Base directory for state, tgz extraction, etc.
 base_dir='/sdcard/.custom-install'
@@ -39,45 +38,6 @@ setup_dirs() {
 
 do_log() {
     log -t custom-install "$@"
-}
-
-ensure_shell_root() {
-    # If running under magisk, ensure that shell can su
-    if [ -f /sbin/magisk -a -f /data/adb/magisk.db ]; then
-        shell_uid=`id -u shell`
-        /sbin/magisk --sqlite "REPLACE INTO policies (uid,policy,until,logging,notification) VALUES($shell_uid,2,0,1,1);"
-    fi
-}
-
-wait_for_sdcard() {
-    i=0
-    while [ $i -lt 20 -a ! -d /sdcard/Download ]; do
-        sleep 1
-        i=`expr $i + 1`
-    done
-}
-
-wait_for_network() {
-    local i=0
-    local got_net=0
-
-    do_log 'Waiting for network to be alive...'
-    while [ $i -lt 40 ]; do
-        if [ $i -gt 0 ]; then
-            sleep 1
-        fi
-        i=`expr $i + 1`
-        ping -c1 -W 5 8.8.8.8 > /dev/null 2>&1
-        if [ $? -eq 0 ]; then
-            do_log 'The network is up!'
-            got_net=1
-            break
-        fi
-    done
-
-    if [ $got_net -eq 0 ]; then
-        do_log 'Failed to get network. Going to continue, anyway.'
-    fi
 }
 
 wait_for_usb_drive() {
@@ -182,23 +142,6 @@ check_usb_drive() {
     fi
 }
 
-imgver=`/system/bin/csimgver`
-do_log "Booted image ${csimgver}."
-
-wait_for_sdcard
-
-if [ -f /sdcard/.no-custom-install ]; then
-    do_log '/sdcard/.no-custom-install exists. Exiting!'
-    exit 0
-else
-    do_log '/sdcard/.no-custom-install does not exist. Continuing...'
-fi
-
-sleep 2
-setup_dirs
-
-ensure_shell_root
-wait_for_network
 check_net_url
 check_usb_drive
 
