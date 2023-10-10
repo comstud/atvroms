@@ -31,6 +31,7 @@ Gather the following (rename them, if their names do not match):
 * The custom.sh from where you got this file.
 * Grab integrityfix.zip (from where you got this file or elsewhere. do not use 9.0, it is busted.)
 * Get your favorite arm64-v8a verison of pokemongo and rename the apk to pokemongo.apk.
+* The Magisk app version you plan to install (26.3 by default in custom.sh).
 
 OPTIONAL:
 
