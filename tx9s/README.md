@@ -29,6 +29,7 @@ It does the following things:
 Gather the following (rename them, if their names do not match):
 
 * The custom.sh from where you got this file.
+* The Magisk.v26.3.apk from where you got this file.
 * Grab integrityfix.zip (from where you got this file or elsewhere. do not use 9.0, it is busted.)
 * Get your favorite arm64-v8a verison of pokemongo and rename the apk to pokemongo.apk.
 
