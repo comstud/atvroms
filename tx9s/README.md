@@ -53,25 +53,25 @@ OPTIONAL:
 ## USING USB DRIVE METHOD #2
 
 * Rename custom.sh to run.sh
-* zip or tar (or tar+gzip) the run.sh and the other files you gathered above. Name the zip/tar as 'boot.tgz'.
+* zip or tar (or tar+gzip) the run.sh and the other files you gathered above. Name the zip/tar as 'on-boot.tgz'.
 * The files should be in the root in the zip/tar, not in a subdirectory/subfolder.
-* Follow the procedure in USB DRIVE METHOD #1 above, *EXCEPT* only copy the boot.tgz to the root of the USB drive.
+* Follow the procedure in USB DRIVE METHOD #1 above, *EXCEPT* only copy the on-boot.tgz to the root of the USB drive.
 
 ## NETWORK INSTALL
 
-Say what? Yes, that's right. Set up a nginx/webserver/whatever and serve the boot.tgz mentioned above.
+Say what? Yes, that's right. Set up a nginx/webserver/whatever and serve the on-boot.tgz mentioned above.
 
 I won't provide instructions as this is for the more techy folks who probably already can figure this out.
 There's also quite a number of ways to do this. But here's the information you will need, and some hints:
 
-* The image will curl this address: `http://atv-installer.local.lan/boot.tgz?mac=<mac-addr>&run_stage=x`
+* The image will curl this address: `http://atv-installer.local.lan/on-boot.tgz?mac=<mac-addr>&run_stage=x`
 * It expects a successful HTTP response code and a file attachment. The file attachment can be named anything.
 * There's more info about this in the image's .md file. I suggest reading that.
 
 Basic steps to setup:
 
 * Create a DNS entry for 'atv-installer.local.lan' and point it at.. nginx or a webserver, or something.
-* Make sure you have a handler for /boot.tgz and have it serve up your boot.tgz
+* Make sure you have a handler for /on-boot.tgz and have it serve up your boot.tgz
 * If you're using something that can also filter on query params, you can do something with 'mac', if you want to serve different boot.tgz files to different devices.
 * Have fun.
 * Just plug in the ATV to ethernet and power it on.
