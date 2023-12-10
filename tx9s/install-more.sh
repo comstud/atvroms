@@ -5,7 +5,7 @@
 # That is this file!
 # 
 # Add your custom commands in here if you want. Some examples (include all of
-# these scripts on your USB drive or inside boot.tgz if you use them):
+# these scripts on your USB drive or inside on-boot.tgz if you use them):
 
 cd `dirname $0`
 

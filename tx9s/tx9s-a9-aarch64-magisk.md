@@ -27,7 +27,7 @@ reboots are involved. Just update that file.
 
 USB install:
 
-* If a usb drive is inserted and contains a 'boot.tgz', it will be extracted into
+* If a usb drive is inserted and contains a 'on-boot.tgz', it will be extracted into
   '/sdcard/.custom-install/.usb-install' and the run.sh will be run.
 * If a usb drive is inserted and contains a 'custom.sh', it will be executed on boot.
 

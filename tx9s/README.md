@@ -72,7 +72,7 @@ Basic steps to setup:
 
 * Create a DNS entry for 'atv-installer.local.lan' and point it at.. nginx or a webserver, or something.
 * Make sure you have a handler for /on-boot.tgz and have it serve up your boot.tgz
-* If you're using something that can also filter on query params, you can do something with 'mac', if you want to serve different boot.tgz files to different devices.
+* If you're using something that can also filter on query params, you can do something with 'mac', if you want to serve different on-boot.tgz files to different devices.
 * Have fun.
 * Just plug in the ATV to ethernet and power it on.
 
